@@ -1,4 +1,6 @@
-package com.mycompany.tallertareas;
+package main.java.com.mycompany.tallertareas;
+
+import main.java.com.mycompany.tallertareas.home;
 
 /**
  *
@@ -7,6 +9,6 @@ package com.mycompany.tallertareas;
 public class TallerTareas {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+        home Home = new home();
+        Home.setVisible(true);
 }
