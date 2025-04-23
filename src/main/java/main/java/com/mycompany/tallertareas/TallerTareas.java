@@ -1,7 +1,5 @@
 package main.java.com.mycompany.tallertareas;
 
-import main.java.com.mycompany.tallertareas.home;
-
 /**
  *
  * @author salacomputocentro.ba
@@ -9,6 +7,7 @@ import main.java.com.mycompany.tallertareas.home;
 public class TallerTareas {
 
     public static void main(String[] args) {
-        home Home = new home();
+        front Home = new front();
         Home.setVisible(true);
+    }
 }
