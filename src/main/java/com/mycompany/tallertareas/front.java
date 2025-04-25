@@ -4,11 +4,18 @@
  */
 package main.java.com.mycompany.tallertareas;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author salacomputocentro.ba
  */
 public class front extends javax.swing.JFrame {
+
+    private ArrayList<Usuario> listaUsuarios = new ArrayList();
+    private ArrayList<Tarea> listaTareas = new ArrayList();
 
     /**
      * Creates new form front
@@ -26,201 +33,43 @@ public class front extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        IdentificacionUsuario = new javax.swing.JTextField();
+        NombreUsuario = new javax.swing.JTextField();
+        BTNGuardarUsu = new javax.swing.JButton();
+        eliminarUsuario = new javax.swing.JButton();
+        BTNEditUsu = new javax.swing.JButton();
+        btncerrar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaUsuarios = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        NomTarea = new javax.swing.JTextField();
-        DescrTarea = new javax.swing.JTextField();
-        NomUsu = new javax.swing.JComboBox<>();
-        Categoría = new javax.swing.JComboBox<>();
+        identificacionTarea = new javax.swing.JTextField();
+        descripcionTarea = new javax.swing.JTextField();
+        usuariosTareas = new javax.swing.JComboBox<>();
+        categoriaTarea = new javax.swing.JComboBox<>();
         BtnGuardar = new javax.swing.JButton();
         btnMarcarHecha = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
-        btnVisualizar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        RBEjecucion = new javax.swing.JRadioButton();
-        RBAsignada = new javax.swing.JRadioButton();
-        RBTerminada = new javax.swing.JRadioButton();
+        ejecucionTarea = new javax.swing.JRadioButton();
+        asignadaTarea = new javax.swing.JRadioButton();
+        terminadaTarea = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaTareas = new javax.swing.JTable();
         btnCerrarT = new javax.swing.JButton();
-        NomTarea1 = new javax.swing.JTextField();
+        nombreTarea = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        IdUsuario = new javax.swing.JTextField();
-        NombreUsuario = new javax.swing.JTextField();
-        BTNGuardarUsu = new javax.swing.JButton();
-        BTNElimiUsu = new javax.swing.JButton();
-        BTNEditUsu = new javax.swing.JButton();
-        btncerrar = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel3.setText("Nombre de usuario:");
-
-        jLabel4.setText("Nombre de la tarea:");
-
-        jLabel5.setText("Descripción:");
-
-        jLabel6.setText("Categoría:");
-
-        Categoría.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Escuela", "Trabajo", "Casa", "Personal" }));
-
-        BtnGuardar.setText("Guardar");
-
-        btnMarcarHecha.setText("Marcar como hecha");
-
-        btnEliminar.setText("Eliminar");
-
-        btnVisualizar.setText("Visualizar");
-
-        jLabel7.setText("Estado de la tarea");
-
-        RBEjecucion.setText("En ejecución");
-
-        RBAsignada.setText("Asignada");
-
-        RBTerminada.setText("Terminada");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Identificación", "Nombre", "Usuario", "Categoría", "Tarea", "Estado"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                true, true, false, true, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-
-        btnCerrarT.setText("Cerrar");
-
-        jLabel8.setText("Identificación de la tarea");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCerrarT))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel8)
-                                            .addComponent(jLabel3))
-                                        .addGap(3, 3, 3)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(NomUsu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(NomTarea)
-                                            .addComponent(NomTarea1)))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addGap(67, 67, 67)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(RBAsignada)
-                                                .addGap(38, 38, 38)
-                                                .addComponent(RBEjecucion)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(RBTerminada)
-                                                .addGap(34, 34, 34))
-                                            .addComponent(Categoría, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(DescrTarea))))
-                                .addGap(53, 53, 53)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnEliminar)
-                                    .addComponent(btnMarcarHecha)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(btnVisualizar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                        .addComponent(BtnGuardar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGap(40, 40, 40)))))
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnCerrarT)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(NomUsu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(NomTarea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(13, 13, 13)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(NomTarea1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel5)
-                        .addGap(34, 34, 34))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DescrTarea, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(BtnGuardar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnVisualizar)
-                                .addGap(12, 12, 12)
-                                .addComponent(btnEliminar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnMarcarHecha)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Categoría, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(RBAsignada)
-                    .addComponent(RBEjecucion)
-                    .addComponent(RBTerminada))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Añadir tarea", jPanel2);
 
         jLabel1.setText("Identificación:");
 
@@ -233,29 +82,36 @@ public class front extends javax.swing.JFrame {
             }
         });
 
-        BTNElimiUsu.setText("Eliminar");
-        BTNElimiUsu.addActionListener(new java.awt.event.ActionListener() {
+        eliminarUsuario.setText("Eliminar");
+        eliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTNElimiUsuActionPerformed(evt);
+                eliminarUsuarioActionPerformed(evt);
             }
         });
 
         BTNEditUsu.setText("Editar");
+        BTNEditUsu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTNEditUsuActionPerformed(evt);
+            }
+        });
 
         btncerrar.setText("Cerrar");
+        btncerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncerrarActionPerformed(evt);
+            }
+        });
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Identificación", "Nombre"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tablaUsuarios);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -273,17 +129,17 @@ public class front extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(IdUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+                            .addComponent(IdentificacionUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
                             .addComponent(NombreUsuario))
                         .addGap(96, 96, 96)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(eliminarUsuario)
+                            .addComponent(BTNEditUsu)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(BTNGuardarUsu)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 312, Short.MAX_VALUE)
-                                .addComponent(btncerrar))
-                            .addComponent(BTNElimiUsu)
-                            .addComponent(BTNEditUsu))))
-                .addContainerGap())
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                                .addComponent(btncerrar)))))
+                .addGap(47, 47, 47))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,7 +149,7 @@ public class front extends javax.swing.JFrame {
                         .addGap(22, 22, 22)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(IdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(IdentificacionUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -304,50 +160,209 @@ public class front extends javax.swing.JFrame {
                             .addComponent(BTNGuardarUsu)
                             .addComponent(btncerrar))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BTNElimiUsu)
+                        .addComponent(eliminarUsuario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BTNEditUsu)))
                 .addGap(46, 46, 46)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(339, Short.MAX_VALUE))
+                .addContainerGap(391, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Gestion de usuario", jPanel3);
+
+        jLabel3.setText("Nombre de usuario:");
+
+        jLabel4.setText("Nombre de la tarea:");
+
+        jLabel5.setText("Descripción:");
+
+        jLabel6.setText("Categoría:");
+
+        categoriaTarea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Escuela", "Trabajo", "Casa", "Personal" }));
+
+        BtnGuardar.setText("Guardar");
+        BtnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarActionPerformed(evt);
+            }
+        });
+
+        btnMarcarHecha.setText("Marcar como hecha");
+
+        btnEliminar.setText("Eliminar");
+
+        jLabel7.setText("Estado de la tarea");
+
+        buttonGroup1.add(ejecucionTarea);
+        ejecucionTarea.setText("En ejecución");
+
+        buttonGroup1.add(asignadaTarea);
+        asignadaTarea.setText("Asignada");
+
+        buttonGroup1.add(terminadaTarea);
+        terminadaTarea.setText("Terminada");
+
+        tablaTareas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Identificación", "Nombre", "Usuario", "Categoría", "Descripción", "Estado"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, true, false, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tablaTareas);
+
+        btnCerrarT.setText("Cerrar");
+
+        jLabel8.setText("Identificación de la tarea");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel3))
+                                .addGap(3, 3, 3)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(identificacionTarea, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                                    .addComponent(usuariosTareas, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(nombreTarea, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(67, 67, 67)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(categoriaTarea, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(asignadaTarea)
+                                                .addGap(38, 38, 38)
+                                                .addComponent(ejecucionTarea)
+                                                .addGap(31, 31, 31)
+                                                .addComponent(terminadaTarea))
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(descripcionTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(80, 80, 80)
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(btnEliminar)
+                                                    .addComponent(btnMarcarHecha)
+                                                    .addComponent(BtnGuardar))))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addGap(228, 228, 228))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCerrarT)
+                .addGap(189, 189, 189))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(129, 129, 129)
+                        .addComponent(descripcionTarea, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnCerrarT)
+                        .addGap(4, 4, 4)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(BtnGuardar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnEliminar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnMarcarHecha))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel3)
+                                    .addComponent(usuariosTareas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(12, 12, 12)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel8)
+                                    .addComponent(identificacionTarea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(13, 13, 13)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(nombreTarea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel5)))))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(categoriaTarea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(asignadaTarea)
+                    .addComponent(ejecucionTarea)
+                    .addComponent(terminadaTarea))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Añadir tarea", jPanel2);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 946, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 745, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1046, Short.MAX_VALUE)
+            .addGap(0, 757, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 726, Short.MAX_VALUE)
+            .addGap(0, 665, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 653, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -355,15 +370,74 @@ public class front extends javax.swing.JFrame {
 
     private void BTNGuardarUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNGuardarUsuActionPerformed
         // TODO add your handling code here:
+        for (int i = 0; i < listaUsuarios.size(); i++) {
+            if (listaUsuarios.get(i).getId().equals(IdentificacionUsuario.getText())) {
+                JOptionPane.showMessageDialog(null, "Ya esta en lista");
+                return;
+            }
+        }
+
+        listaUsuarios.add(new Usuario(IdentificacionUsuario.getText(), NombreUsuario.getText()));
+        actualizarUsuariosTareas();
+        actualizarTablaUsuarios();
     }//GEN-LAST:event_BTNGuardarUsuActionPerformed
 
-    private void BTNElimiUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNElimiUsuActionPerformed
+    private void eliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BTNElimiUsuActionPerformed
-    
-    
-    
-    
+        if (tablaUsuarios.getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(null, "No se ha seleccionado ningun usuario");
+            return;
+        }
+        int fila = tablaUsuarios.getSelectedRow();
+        listaUsuarios.remove(fila);
+        actualizarUsuariosTareas();
+        actualizarTablaUsuarios();
+    }//GEN-LAST:event_eliminarUsuarioActionPerformed
+
+    private void BTNEditUsuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTNEditUsuActionPerformed
+        // TODO add your handling code here:
+        if (listaUsuarios.size() == 0) {
+            JOptionPane.showMessageDialog(null, "La lista esta vacia");
+            return;
+        }
+        JOptionPane.showMessageDialog(null, "Digite el id del usuario a editar");        
+        for (int i = 0; i < listaUsuarios.size(); i++) {
+            if (listaUsuarios.get(i).getId().equals(IdentificacionUsuario.getText())) {
+                listaUsuarios.get(i).setNombre(NombreUsuario.getText());
+                actualizarTablaUsuarios();
+                actualizarUsuariosTareas();
+                return;
+            }
+        }
+        JOptionPane.showMessageDialog(null, "No esta en lista");
+    }//GEN-LAST:event_BTNEditUsuActionPerformed
+
+    private void btncerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncerrarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btncerrarActionPerformed
+
+    private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i < listaTareas.size(); i++) {
+            if (listaTareas.get(i).getId().equals(identificacionTarea.getText())) {
+                JOptionPane.showMessageDialog(null, "Ya esta en lista");
+                return;
+            }
+        }
+        Tarea task = new Tarea(identificacionTarea.getText(),nombreTarea.getText(),descripcionTarea.getText(),buttonGroup1.getSelection().toString(),
+                categoriaTarea.getSelectedItem().toString(),usuariosTareas.getSelectedItem().toString());
+        for(Usuario u: listaUsuarios){
+            if (u.getId()==usuariosTareas.getSelectedItem().toString()){
+                u.setListaTareas(task);
+                System.out.println(usuariosTareas.getSelectedItem().toString());
+            }
+        }
+        System.out.println("TAREA CON ID: "+task);
+        actualizarTablaTareas();
+        
+    }//GEN-LAST:event_BtnGuardarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -399,26 +473,56 @@ public class front extends javax.swing.JFrame {
         });
     }
 
+    public void actualizarUsuariosTareas(){
+        usuariosTareas.removeAllItems();
+        for(int i = 0; i<listaUsuarios.size(); i++)
+        usuariosTareas.addItem(listaUsuarios.get(i).getId());
+    }
+    public void actualizarTablaUsuarios() {
+        String columnas[] = {"Identificacion", "Usuario"};
+        String matriz[][] = new String[listaUsuarios.size()][2];
+        for (int i = 0; i < listaUsuarios.size(); i++) {
+            matriz[i][0] = listaUsuarios.get(i).getId();
+            matriz[i][1] = listaUsuarios.get(i).getNombre();
+        }
+        tablaUsuarios.setModel(new DefaultTableModel(matriz, columnas));
+    }
+    
+    public void actualizarTablaTareas() {
+        listaTareas.clear();
+        for (Usuario usuario : listaUsuarios){
+            listaTareas.addAll(usuario.getListaTareas());
+        }
+        String columnas[] = {"Identificacion", "Nombre","Usuario","Categoria","Descripcion","Estado"};
+        String matriz[][] = new String[listaTareas.size()][6];
+        for (int i = 0; i < listaTareas.size(); i++) {
+            matriz[i][0] = listaTareas.get(i).getId();
+            matriz[i][1] = listaTareas.get(i).getNombre();
+            matriz[i][2] = listaTareas.get(i).getUsuarioId();
+            matriz[i][3] = listaTareas.get(i).getCategoria();
+            matriz[i][4] = listaTareas.get(i).getDescripcion();
+            matriz[i][5] = listaTareas.get(i).getProgreso();
+        }
+        tablaTareas.setModel(new DefaultTableModel(matriz, columnas));
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BTNEditUsu;
-    private javax.swing.JButton BTNElimiUsu;
     private javax.swing.JButton BTNGuardarUsu;
     private javax.swing.JButton BtnGuardar;
-    private javax.swing.JComboBox<String> Categoría;
-    private javax.swing.JTextField DescrTarea;
-    private javax.swing.JTextField IdUsuario;
-    private javax.swing.JTextField NomTarea;
-    private javax.swing.JTextField NomTarea1;
-    private javax.swing.JComboBox<String> NomUsu;
+    private javax.swing.JTextField IdentificacionUsuario;
     private javax.swing.JTextField NombreUsuario;
-    private javax.swing.JRadioButton RBAsignada;
-    private javax.swing.JRadioButton RBEjecucion;
-    private javax.swing.JRadioButton RBTerminada;
+    private javax.swing.JRadioButton asignadaTarea;
     private javax.swing.JButton btnCerrarT;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnMarcarHecha;
-    private javax.swing.JButton btnVisualizar;
     private javax.swing.JButton btncerrar;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox<String> categoriaTarea;
+    private javax.swing.JTextField descripcionTarea;
+    private javax.swing.JRadioButton ejecucionTarea;
+    private javax.swing.JButton eliminarUsuario;
+    private javax.swing.JTextField identificacionTarea;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -433,7 +537,10 @@ public class front extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTextField nombreTarea;
+    private javax.swing.JTable tablaTareas;
+    private javax.swing.JTable tablaUsuarios;
+    private javax.swing.JRadioButton terminadaTarea;
+    private javax.swing.JComboBox<String> usuariosTareas;
     // End of variables declaration//GEN-END:variables
 }
